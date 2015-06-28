@@ -1,0 +1,39 @@
+{
+  "name": "angular-input-highlight",
+  "version": "0.1.0",
+  "description": "Adds basic formatting capabilities to text and textarea inputs",
+  "main": "angular-input-highlight.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "coffee --watch --compile *.coffee & live-server --port=${PORT:=8080}; kill %"
+  },
+  "keywords": [
+    "highlight",
+    "textarea",
+    "angular"
+  ],
+  "author": "Sergii Iavorskyi <yavorskiy.s@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.2.28"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.1",
+    "chai": "^3.0.0",
+    "coffee-script": "^1.9.3",
+    "karma": "^0.12.37",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-ievms": "0.0.4",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-safari-launcher": "^0.1.1",
+    "live-server": "^0.7.1",
+    "mocha": "^2.2.5",
+    "optimist": "^0.6.1",
+    "phantomjs": "^1.9.17"
+  }
+}
