@@ -8,6 +8,8 @@ Additionaly it tracks position of all highlighter fragments. So you can use it f
 - **No extra markup (uses background image)**
 - **No stylesheets**
 
+Please [see demo](http://yavorskiy.github.io/angular-input-highlight/)
+
 ### Installation
 
 Get it with Bower `bower i angular-input-highlight` or with npm `npm i angular-input-highlight`
