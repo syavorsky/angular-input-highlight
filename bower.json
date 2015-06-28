@@ -1,10 +1,10 @@
 {
   "name": "angular-input-highlight",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "Sergii Iavorskyi <yavorskiy.s@gmail.com>"
   ],
-  "description": "Adds basic formatting capabilities to text and textarea inputs",
+  "description": "Angular directive adding fragment highlighting capabilities to textarea inputs",
   "main": "angular-input-highlight.js",
   "moduleType": [
     "globals"
@@ -22,6 +22,10 @@
     "test",
     "tests"
   ],
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/yavorskiy/angular-input-highlight.git"
+  },
   "dependencies": {
     "angular": "~1.2.28"
   }
