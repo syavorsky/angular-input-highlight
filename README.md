@@ -16,13 +16,15 @@ Get it with Bower `bower i angular-input-highlight` or with npm `npm i angular-i
 
 ### Usage
 
-```
-<textarea ng-model="..." highlight="format"></textarea>
+```html
+<textarea ng-model="..." 
+  highlight="format"
+  highlight-onchange="list($markers)"></textarea>
 ```
 
 where `matches` is a map of Color - RegExp/String pairs. Color string should be whatever suites CSS color value, e.g.
 
-```
+```javascript
 format = {
    'red'             : /\d+/g,
    '#00ff00'         : /@[a-z0-9]/ig,
