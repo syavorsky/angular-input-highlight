@@ -96,7 +96,7 @@ angular.module 'input-highlight', []
 
               rects.push coords
 
-            data.rectsgit = rects
+            data.rects = rects
             markers.push data
 
         el.css 'background-image', "url(#{canvas.toDataURL()})"
