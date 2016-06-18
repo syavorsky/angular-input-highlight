@@ -72,16 +72,22 @@ describe 'angular-input-highlight', ->
     expect markers[0].color
       .to.be.eq '#f00'
 
-    for prop, type in (
+    for prop, type of (
+      rects  : 'array'
+      color  : 'string'
+      text   : 'string'
+    ) 
+      expect markers[0][prop]
+        .to.be.a type
+      
+    for prop, type of (
       x      : 'number'
       y      : 'number'
       width  : 'number'
       height : 'number'
-      color  : 'string'
-      text   : 'string'
     )
-      expect markers[0][prop]
-        .to.be.eq type
+      expect markers[0].rects[0][prop]
+        .to.be.a type
 
   # --------------------------------------
 

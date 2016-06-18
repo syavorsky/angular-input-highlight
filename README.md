@@ -1,6 +1,6 @@
 # angular-input-highlight
 
-This directive allows to highlight a text in `textarea` by regular expression or substring. 
+This directive allows to highlight a text in `textarea` by regular expression or substring.
 
 Additionaly it tracks position of all highlighter fragments. So you can use it for positioning other overlay elements like tooltips.
 
@@ -17,7 +17,7 @@ Get it with Bower `bower i angular-input-highlight` or with npm `npm i angular-i
 ### Usage
 
 ```html
-<textarea ng-model="..." 
+<textarea ng-model="..."
   highlight="format"
   highlight-onchange="list($markers)"></textarea>
 ```
@@ -40,5 +40,5 @@ format = {
 
 ### Contibuting
 
-Fill free to suggest improvements. 
-Run `npm run-script dev` to mess with the code.
+Fill free to suggest improvements.
+Run `npm start` to mess with the code.
