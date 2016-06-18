@@ -5,7 +5,7 @@
   "main": "angular-input-highlight.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "coffee --watch --compile *.coffee & live-server --port=${PORT:=8080}; kill %"
+    "start": "coffee --watch --compile *.coffee & live-server --port=${PORT:=8080}; kill %"
   },
   "keywords": [
     "highlight",
@@ -17,7 +17,7 @@
   "dependencies": {
     "angular": "^1.2.28"
   },
-  "repository" : { 
+  "repository" : {
     "type" : "git",
     "url" : "https://github.com/yavorskiy/angular-input-highlight.git"
   },
