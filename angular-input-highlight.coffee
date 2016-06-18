@@ -1,3 +1,17 @@
+_countScrollbar = null  
+countScrollbar = ->
+  return _countScrollbar if _countScrollbar != null
+  t = document.createElement('textarea');
+  t.style.width   = '50px';
+  t.style.height  = '50px';
+  t.style.border  = 'none';
+  t.style.padding = '0';
+
+  document.body.appendChild(t);
+  _countScrollbar = t.clientWidth != window.getComputedStyle(t).width
+  document.body.removeChild(t)
+
+  _countScrollbar
 
 angular.module 'input-highlight', []
   .directive 'highlight', ['$parse', ($parse) ->
@@ -9,9 +23,14 @@ angular.module 'input-highlight', []
       spread    = 2
       mirror    = angular.element('<div style="position:relative"></div>')[0]
       container = angular.element('<div style="position:absolute;width:0px;height:0px;overflow:hidden;"></div>')[0]
-      textProps = ['font-size', 'font-family', 'font-style', 'font-weight', 'font-variant', 'font-stretch',
+      sizeProps = ['width', 
+        'font-size', 'font-family', 'font-style', 'font-weight', 'font-variant', 'font-stretch',
         'line-height', 'vertical-align', 'word-spacing', 'text-align', 'letter-spacing', 'text-rendering'
-        'padding', 'border']
+        'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+        'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+        'box-sizing']
+
+      sizeProps.push 'overflow-y' if countScrollbar()
 
       document.body.appendChild container
       container.appendChild mirror
@@ -22,8 +41,9 @@ angular.module 'input-highlight', []
 
       style = window.getComputedStyle input
       mirror.style['white-space'] = 'pre-wrap'
+      mirror.style['width']
 
-      for prop in textProps
+      for prop in sizeProps
         mirror.style[prop] = style[prop]
 
       el.css 'resize', 'vertical' if style['resize'] is 'both'
@@ -51,11 +71,11 @@ angular.module 'input-highlight', []
 
         for color, re of formatting
           mirror.innerHTML = text.replace re, (s) ->
-            "<span style=\"position:relative\" data-marker=\"#{color}\">#{s}</span>"
+            "<span style=\"position:relative;background:red;\" data-marker=\"#{color}\">#{s}</span>"
 
           containerRect = mirror.getClientRects()[0]
-          offsetX = containerRect.left + parseInt style.borderLeftWidth, 10
-          offsetY = containerRect.top + parseInt style.borderTopWidth, 10
+          offsetX = containerRect.left
+          offsetY = containerRect.top
 
           for marker in mirror.querySelectorAll 'span[data-marker]'
             data =
