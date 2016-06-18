@@ -4,8 +4,9 @@
   "description": "Angular directive adding fragment highlighting capabilities to textarea inputs",
   "main": "angular-input-highlight.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "coffee --watch --compile *.coffee & live-server --port=${PORT:=8080}; kill %"
+    "test": "karma start --single-run --no-watch",
+    "start": "coffee --watch --compile *.coffee & live-server --port=${PORT:=8080}; kill %",
+    "build": "coffee --compile *.coffee"
   },
   "keywords": [
     "highlight",
@@ -17,14 +18,13 @@
   "dependencies": {
     "angular": "^1.2.28"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/yavorskiy/angular-input-highlight.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yavorskiy/angular-input-highlight.git"
   },
   "devDependencies": {
-    "angular-mocks": "^1.4.1",
     "chai": "^3.0.0",
-    "coffee-script": "^1.9.3",
+    "coffee-script": "^1.10.0",
     "karma": "^0.12.37",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
