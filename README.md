@@ -42,3 +42,6 @@ format = {
 
 Fill free to suggest improvements.
 Run `npm start` to mess with the code.
+
+### License 
+MIT
