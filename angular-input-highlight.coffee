@@ -1,4 +1,15 @@
-_countScrollbar = null  
+_countScrollbar = null
+ENTITY_MAP =
+  "&": "&amp;"
+  "<": "&lt;"
+  ">": "&gt;"
+  '"': '&quot;'
+  "'": '&#39;'
+  "/": '&#x2F;'
+
+escapeHTMLEntities = (str) ->
+  String(str).replace /[&<>"'\/]/g, (c) -> ENTITY_MAP[c]
+
 countScrollbar = ->
   return _countScrollbar if _countScrollbar != null
   t = document.createElement('textarea');
@@ -64,13 +75,13 @@ angular.module 'input-highlight', []
         markers      = []
         originalText = text
 
-        mirror.innerHTML = text
+        mirror.innerHTML = escapeHTMLEntities(text)
         mirror.style.width = style.width;
         canvas.width  = mirror.clientWidth
         canvas.height = mirror.clientHeight
 
         for color, re of formatting
-          mirror.innerHTML = text.replace re, (s) ->
+          mirror.innerHTML = escapeHTMLEntities(text).replace re, (s) ->
             "<span style=\"position:relative;background:red;\" data-marker=\"#{color}\">#{s}</span>"
 
           containerRect = mirror.getClientRects()[0]
