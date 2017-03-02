@@ -38,6 +38,7 @@
     "live-server": "^0.7.1",
     "mocha": "^2.2.5",
     "optimist": "^0.6.1",
-    "phantomjs": "^1.9.17"
+    "phantomjs": "^1.9.17",
+    "angular-mocks": "^1.6.2"
   }
 }
