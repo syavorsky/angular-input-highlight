@@ -116,8 +116,17 @@ describe 'angular-input-highlight', ->
 
     expect markers.length
       .to.be.eq 1
-
-
+  
+  it 'Test textarea empty value', ->
+    scope.$digest()
+    scope.text = ''
+    scope.$digest()
+    expect markers.length
+      .to.be.eq 0;
+    scope.text = undefined;
+    scope.$digest()
+    expect markers.length
+      .to.be.eq 0;
 
 
 

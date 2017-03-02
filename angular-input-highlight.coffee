@@ -62,6 +62,7 @@ angular.module 'input-highlight', []
 
       render = (text) ->
         markers      = []
+        text = text || "";
         originalText = text
 
         mirror.innerHTML = text
